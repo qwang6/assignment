@@ -18,6 +18,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -36,6 +39,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -70,6 +76,18 @@
       </map>
     </option>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -80,8 +98,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586667824180</updated>
+      <workItem from="1586735617244" duration="51000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1338" y="217" key="#Project_Structure" timestamp="1586671161573">
@@ -132,10 +154,11 @@
       <screen x="-1875" y="23" width="1875" height="1057" />
     </state>
     <state width="1833" height="487" key="GridCell.Tab.1.right/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586729554955" />
-    <state x="-1429" y="190" key="SettingsEditor" timestamp="1586717162286">
-      <screen x="-1875" y="23" width="1875" height="1057" />
+    <state x="662" y="247" key="SettingsEditor" timestamp="1586735683321">
+      <screen x="70" y="23" width="2490" height="1417" />
     </state>
     <state x="-1429" y="190" key="SettingsEditor/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586717162286" />
+    <state x="662" y="247" key="SettingsEditor/70.23.2490.1417@70.23.2490.1417" timestamp="1586735683321" />
     <state x="-1271" y="308" width="667" height="486" key="find.popup" timestamp="1586735248690">
       <screen x="-1875" y="23" width="1875" height="1057" />
     </state>
