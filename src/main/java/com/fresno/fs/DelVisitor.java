@@ -1,19 +1,19 @@
 package com.fresno.fs;
 
-public class DelAction implements Action {
+public class DelVisitor implements Visitor {
 
-    private static Action delAction;
+    private static Visitor delVisitor;
 
-    private DelAction() {
+    private DelVisitor() {
 
     }
 
     // singleton pattern
-    public static Action getInstance() {
-        if (delAction == null) {
-            delAction = new DelAction();
+    public static Visitor getInstance() {
+        if (delVisitor == null) {
+            delVisitor = new DelVisitor();
         }
-        return delAction;
+        return delVisitor;
     }
 
     public void visit(Node node) throws Exception {

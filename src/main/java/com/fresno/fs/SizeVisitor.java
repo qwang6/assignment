@@ -1,19 +1,19 @@
 package com.fresno.fs;
 
-public class SizeAction implements Action {
+public class SizeVisitor implements Visitor {
 
-    private static Action sizeAction;
+    private static Visitor sizeVisitor;
 
-    private SizeAction() {
+    private SizeVisitor() {
 
     }
 
     // singleton pattern
-    public static Action getInstance() {
-        if (sizeAction == null) {
-            sizeAction = new SizeAction();
+    public static Visitor getInstance() {
+        if (sizeVisitor == null) {
+            sizeVisitor = new SizeVisitor();
         }
-        return sizeAction;
+        return sizeVisitor;
     }
 
     public void visit(Node node) {

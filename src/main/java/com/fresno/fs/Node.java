@@ -23,7 +23,7 @@ public class Node {
         this.fileSize = fileSize;
     }
 
-    public void accept(Action action) throws Exception {
-        action.visit(this);
+    public void accept(Visitor visitor) throws Exception {
+        visitor.visit(this);
     }
 }

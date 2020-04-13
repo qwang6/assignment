@@ -3,7 +3,7 @@
 title __FS's Class Diagram__\n
 
   namespace com.fresno.fs {
-    interface com.fresno.fs.Action {
+    interface com.fresno.fs.Visitor {
         {abstract} + visit()
     }
   }
@@ -24,7 +24,7 @@ title __FS's Class Diagram__\n
   
 
   namespace com.fresno.fs {
-    class com.fresno.fs.DelAction {
+    class com.fresno.fs.DelVisitor {
         {static} - delAction : Action
         {static} + getInstance()
         + visit()
@@ -111,7 +111,7 @@ title __FS's Class Diagram__\n
   
 
   namespace com.fresno.fs {
-    class com.fresno.fs.LsAction {
+    class com.fresno.fs.LsVisitor {
         {static} - lsAction : Action
         {static} + getInstance()
         + visit()
@@ -137,7 +137,7 @@ title __FS's Class Diagram__\n
   
 
   namespace com.fresno.fs {
-    class com.fresno.fs.SizeAction {
+    class com.fresno.fs.SizeVisitor {
         {static} - sizeAction : Action
         {static} + getInstance()
         + visit()
@@ -162,20 +162,20 @@ title __FS's Class Diagram__\n
   }
   
 
-  com.fresno.fs.DelAction .up.|> com.fresno.fs.Action
+  com.fresno.fs.DelVisitor .up.|> com.fresno.fs.Visitor
   com.fresno.fs.FileSystemBuilder .up.|> com.fresno.fs.Builder
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Node : curNode
-  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Action : del
+  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : del
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.DeleteProxy : deleteProxy
-  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Action : ls
+  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : ls
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Node : root
-  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Action : size
+  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : size
   com.fresno.fs.FooterTextDisplay -up-|> com.fresno.fs.HeaderTextDisplay
   com.fresno.fs.HeaderTextDisplay .up.|> com.fresno.fs.TreeDisplay
   com.fresno.fs.HeaderTextDisplay o-- com.fresno.fs.TreeDisplay : treeDisplay
-  com.fresno.fs.LsAction .up.|> com.fresno.fs.Action
+  com.fresno.fs.LsVisitor .up.|> com.fresno.fs.Visitor
   com.fresno.fs.Node o-- com.fresno.fs.Node : parent
-  com.fresno.fs.SizeAction .up.|> com.fresno.fs.Action
+  com.fresno.fs.SizeVisitor .up.|> com.fresno.fs.Visitor
   com.fresno.fs.TreeDisplayAdapter .up.|> com.fresno.fs.TreeDisplay
   com.fresno.fs.TreeDisplayAdapter o-- com.fresno.fs.FileSystemDisplay : fsDisplay
 

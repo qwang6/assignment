@@ -22,7 +22,7 @@ public class FileSystemDisplay {
 
         int depth = node.depth;
         StringBuilder sb = new StringBuilder("|");
-        for (int i = 0; i < depth * 4; i++) {
+        for (int i = 0; i < depth * FSConstant.INDENT; i++) {
             sb.append("-");
         }
         sb.append(node.name);

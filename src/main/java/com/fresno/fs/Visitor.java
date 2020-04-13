@@ -1,6 +1,6 @@
 package com.fresno.fs;
 
-public interface Action {
+public interface Visitor {
 
     public void visit(Node node) throws Exception;
 

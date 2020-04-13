@@ -4,20 +4,20 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class LsAction implements Action {
+public class LsVisitor implements Visitor {
 
-    private static Action lsAction;
+    private static Visitor lsVisitor;
 
-    private LsAction() {
+    private LsVisitor() {
 
     }
 
     // singleton pattern
-    public static Action getInstance() {
-        if (lsAction == null) {
-            lsAction = new LsAction();
+    public static Visitor getInstance() {
+        if (lsVisitor == null) {
+            lsVisitor = new LsVisitor();
         }
-        return lsAction;
+        return lsVisitor;
     }
 
     public void visit(Node node) {

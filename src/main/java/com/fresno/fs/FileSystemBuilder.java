@@ -3,9 +3,9 @@ package com.fresno.fs;
 public class FileSystemBuilder implements Builder {
     private Node root;
     private Node curNode;
-    private Action del;
-    private Action ls;
-    private Action size;
+    private Visitor delVisitor;
+    private Visitor lsVisitor;
+    private Visitor sizeVisitor;
     private DeleteProxy deleteProxy;
     private static Builder builder;
 
@@ -14,9 +14,9 @@ public class FileSystemBuilder implements Builder {
         root.name = FSConstant.ROOT_NAME;
         root.depth = 0;
         this.curNode = root;
-        this.del = DelAction.getInstance();
-        this.ls = LsAction.getInstance();
-        this.size = SizeAction.getInstance();
+        this.delVisitor = DelVisitor.getInstance();
+        this.lsVisitor = LsVisitor.getInstance();
+        this.sizeVisitor = SizeVisitor.getInstance();
         this.deleteProxy = DeleteProxy.getInstance();
     }
 
@@ -111,13 +111,12 @@ public class FileSystemBuilder implements Builder {
         if (!curNode.children.containsKey(name)) {
             throw new Exception("The target " + name + " is not existed!");
         }
-
-        curNode.children.get(name).accept(del);
+        curNode.children.get(name).accept(delVisitor);
     }
 
     @Override
     public void lsAction() throws Exception {
-        curNode.accept(ls);
+        curNode.accept(lsVisitor);
     }
 
     @Override
@@ -130,7 +129,7 @@ public class FileSystemBuilder implements Builder {
         if (!curNode.children.containsKey(name)) {
             throw new Exception("The file " + name + " doesn't exist!");
         }
-        curNode.children.get(name).accept(size);
+        curNode.children.get(name).accept(sizeVisitor);
     }
 
     @Override

@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c3dda79-2604-43a4-bddb-f68f3e2bb17e" name="Default Changelist" comment="" />
+    <list default="true" id="0c3dda79-2604-43a4-bddb-f68f3e2bb17e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/assignment.plantuml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/DelAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/DelVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FSConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FSConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FileSystemBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FileSystemBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FileSystemDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FileSystemDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/LsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/LsVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/SizeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/SizeVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/fs.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/fs.plantuml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/assignment.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/Action.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/DelAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/FileSystemBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fresno/fs/FileSystemBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/LsAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fresno/fs/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/SizeAction.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +52,9 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1aQVUzGmqMUeQedorp0V7Ro0FLw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -49,7 +72,7 @@
   </component>
   <component name="RunManager">
     <configuration name="FileSystemClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8.0_121" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8.0_211" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.fresno.fs.FileSystemClient" />
       <module name="assignment" />
@@ -99,6 +122,9 @@
       <option name="presentableId" value="Default" />
       <updated>1586667824180</updated>
       <workItem from="1586735617244" duration="51000" />
+      <workItem from="1586735697374" duration="227000" />
+      <workItem from="1586735946018" duration="830000" />
+      <workItem from="1586736857084" duration="1237000" />
     </task>
     <servers />
   </component>
@@ -110,34 +136,47 @@
       <screen x="-1875" y="23" width="1875" height="1057" />
     </state>
     <state x="-1338" y="217" key="#Project_Structure/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586671161573" />
-    <state x="-1473" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586671097430">
-      <screen x="-1875" y="23" width="1875" height="1057" />
+    <state x="604" y="278" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586737593102">
+      <screen x="70" y="23" width="2490" height="1417" />
     </state>
     <state x="-1473" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586671097430" />
+    <state x="604" y="278" key="#com.intellij.execution.impl.EditConfigurationsDialog/70.23.2490.1417@70.23.2490.1417" timestamp="1586737593102" />
     <state x="-1125" y="242" key="#com.intellij.ide.util.MemberChooser" timestamp="1586735042778">
       <screen x="-1875" y="23" width="1875" height="1057" />
     </state>
     <state x="-1125" y="242" key="#com.intellij.ide.util.MemberChooser/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586735042778" />
+    <state x="1164" y="627" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586736139609">
+      <screen x="70" y="23" width="2490" height="1417" />
+    </state>
+    <state x="1164" y="627" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/70.23.2490.1417@70.23.2490.1417" timestamp="1586736139609" />
+    <state x="752" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586737188349">
+      <screen x="70" y="23" width="2490" height="1417" />
+    </state>
+    <state x="752" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/70.23.2490.1417@70.23.2490.1417" timestamp="1586737188349" />
     <state x="-1200" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586711168521">
       <screen x="-1875" y="23" width="1875" height="1057" />
     </state>
     <state x="-1200" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586711168521" />
-    <state width="1833" height="906" key="GridCell.Tab.0.bottom" timestamp="1586735250534">
-      <screen x="-1875" y="23" width="1875" height="1057" />
+    <state width="2448" height="408" key="GridCell.Tab.0.bottom" timestamp="1586737637414">
+      <screen x="70" y="23" width="2490" height="1417" />
     </state>
     <state width="1833" height="906" key="GridCell.Tab.0.bottom/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586735250534" />
-    <state width="1833" height="906" key="GridCell.Tab.0.center" timestamp="1586735250534">
-      <screen x="-1875" y="23" width="1875" height="1057" />
+    <state width="2448" height="408" key="GridCell.Tab.0.bottom/70.23.2490.1417@70.23.2490.1417" timestamp="1586737637414" />
+    <state width="2448" height="408" key="GridCell.Tab.0.center" timestamp="1586737637414">
+      <screen x="70" y="23" width="2490" height="1417" />
     </state>
     <state width="1833" height="906" key="GridCell.Tab.0.center/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586735250534" />
-    <state width="1833" height="906" key="GridCell.Tab.0.left" timestamp="1586735250533">
-      <screen x="-1875" y="23" width="1875" height="1057" />
+    <state width="2448" height="408" key="GridCell.Tab.0.center/70.23.2490.1417@70.23.2490.1417" timestamp="1586737637414" />
+    <state width="2448" height="408" key="GridCell.Tab.0.left" timestamp="1586737637413">
+      <screen x="70" y="23" width="2490" height="1417" />
     </state>
     <state width="1833" height="906" key="GridCell.Tab.0.left/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586735250533" />
-    <state width="1833" height="906" key="GridCell.Tab.0.right" timestamp="1586735250534">
-      <screen x="-1875" y="23" width="1875" height="1057" />
+    <state width="2448" height="408" key="GridCell.Tab.0.left/70.23.2490.1417@70.23.2490.1417" timestamp="1586737637413" />
+    <state width="2448" height="408" key="GridCell.Tab.0.right" timestamp="1586737637414">
+      <screen x="70" y="23" width="2490" height="1417" />
     </state>
     <state width="1833" height="906" key="GridCell.Tab.0.right/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586735250534" />
+    <state width="2448" height="408" key="GridCell.Tab.0.right/70.23.2490.1417@70.23.2490.1417" timestamp="1586737637414" />
     <state width="1833" height="487" key="GridCell.Tab.1.bottom" timestamp="1586729554955">
       <screen x="-1875" y="23" width="1875" height="1057" />
     </state>
@@ -154,11 +193,11 @@
       <screen x="-1875" y="23" width="1875" height="1057" />
     </state>
     <state width="1833" height="487" key="GridCell.Tab.1.right/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586729554955" />
-    <state x="662" y="247" key="SettingsEditor" timestamp="1586735683321">
+    <state x="662" y="247" key="SettingsEditor" timestamp="1586735933343">
       <screen x="70" y="23" width="2490" height="1417" />
     </state>
     <state x="-1429" y="190" key="SettingsEditor/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586717162286" />
-    <state x="662" y="247" key="SettingsEditor/70.23.2490.1417@70.23.2490.1417" timestamp="1586735683321" />
+    <state x="662" y="247" key="SettingsEditor/70.23.2490.1417@70.23.2490.1417" timestamp="1586735933343" />
     <state x="-1271" y="308" width="667" height="486" key="find.popup" timestamp="1586735248690">
       <screen x="-1875" y="23" width="1875" height="1057" />
     </state>
