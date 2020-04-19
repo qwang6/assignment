@@ -15,12 +15,12 @@ public class SizeVisitor implements Visitor {
         }
         return sizeVisitor;
     }
-
+    // size visit, get the summation size of folder or get size of file directly.
     public void visit(Node node) {
-        if (!node.isFile) {
+        if (!node.isFile) {         // node is a folder
             int folderSize = getSize(node);
             System.out.println(FSUtils.getAbsolutePath(node) + " is a folder, the total size of this folder is " + folderSize);
-        } else {
+        } else {                    // node is a file
             System.out.println("The file " + FSUtils.getAbsolutePath(node) + " size is " + node.fileSize);
         }
     }
@@ -29,9 +29,9 @@ public class SizeVisitor implements Visitor {
         int res = 0;
         for (Node next : node.children.values()) {
             if (next.isFile) {
-                res += next.fileSize;
+                res += next.fileSize;        // sum up file size directly
             } else {
-                res += getSize(next);
+                res += getSize(next);        // sum up folder size recursively
             }
         }
         return res;

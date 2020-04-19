@@ -1,8 +1,9 @@
 package com.fresno.fs;
 
-public class FooterTextDisplay extends HeaderTextDisplay {
+public class FooterTextDisplay implements TreeDisplay {
+    private TreeDisplay treeDisplay;
     public FooterTextDisplay(TreeDisplay treeDisplay) {
-        super(treeDisplay);
+        this.treeDisplay = treeDisplay;
     }
 
     public void display(Node node) {

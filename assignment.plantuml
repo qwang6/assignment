@@ -3,12 +3,6 @@
 title __ASSIGNMENT's Class Diagram__\n
 
   namespace com.fresno.fs {
-    interface com.fresno.fs.Visitor {
-    }
-  }
-  
-
-  namespace com.fresno.fs {
     interface com.fresno.fs.Builder {
     }
   }
@@ -21,7 +15,13 @@ title __ASSIGNMENT's Class Diagram__\n
   
 
   namespace com.fresno.fs {
-    class com.fresno.fs.DeleteProxy {
+    class com.fresno.fs.ExitProxy {
+    }
+  }
+  
+
+  namespace com.fresno.fs {
+    class com.fresno.fs.ExitVisitor {
     }
   }
   
@@ -98,15 +98,25 @@ title __ASSIGNMENT's Class Diagram__\n
   }
   
 
+  namespace com.fresno.fs {
+    interface com.fresno.fs.Visitor {
+    }
+  }
+  
+
   com.fresno.fs.DelVisitor .up.|> com.fresno.fs.Visitor
+  com.fresno.fs.ExitProxy .up.|> com.fresno.fs.Visitor
+  com.fresno.fs.ExitProxy o-- com.fresno.fs.Visitor : exitVisitor
+  com.fresno.fs.ExitVisitor .up.|> com.fresno.fs.Visitor
   com.fresno.fs.FileSystemBuilder .up.|> com.fresno.fs.Builder
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Node : curNode
-  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : del
-  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.DeleteProxy : deleteProxy
-  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : ls
+  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : delVisitor
+  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : deleteProxy
+  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : lsVisitor
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Node : root
-  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : size
-  com.fresno.fs.FooterTextDisplay -up-|> com.fresno.fs.HeaderTextDisplay
+  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : sizeVisitor
+  com.fresno.fs.FooterTextDisplay .up.|> com.fresno.fs.TreeDisplay
+  com.fresno.fs.FooterTextDisplay o-- com.fresno.fs.TreeDisplay : treeDisplay
   com.fresno.fs.HeaderTextDisplay .up.|> com.fresno.fs.TreeDisplay
   com.fresno.fs.HeaderTextDisplay o-- com.fresno.fs.TreeDisplay : treeDisplay
   com.fresno.fs.LsVisitor .up.|> com.fresno.fs.Visitor

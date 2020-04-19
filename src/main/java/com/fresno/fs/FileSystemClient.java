@@ -40,7 +40,8 @@ public class FileSystemClient {
                     System.out.println("no match");
             }
         }
+        // adapter pattern, chaining instantiation
         TreeDisplay treeDisplay = new FooterTextDisplay(new HeaderTextDisplay(new TreeDisplayAdapter(FileSystemDisplay.getInstance())));
-        treeDisplay.display(builder.getRoot());
+        treeDisplay.display(builder.getRoot());  // execute FileSystemDisplay()
     }
 }

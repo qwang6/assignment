@@ -20,17 +20,22 @@ public class LsVisitor implements Visitor {
         return lsVisitor;
     }
 
+    //ls visit, print folder and file.
     public void visit(Node node) {
         List<Node> folderList = new ArrayList<>();
         List<Node> fileList = new ArrayList<>();
 
+        // distinguish between folder and file
         for (String name : node.children.keySet()) {
             Node next = node.children.get(name);
             if (next.isFile) fileList.add(next);
             else folderList.add(next);
         }
+        // sorting name by increasing character order
         folderList.sort(Comparator.comparing(a -> a.name));
         fileList.sort(Comparator.comparing(a -> a.name));
+
+        // print pattern
         StringBuilder sb = new StringBuilder();
         for (Node n : folderList) {
             sb.append("--d    ").append(n.name).append('\n');
@@ -38,8 +43,8 @@ public class LsVisitor implements Visitor {
         for (Node n : fileList) {
             sb.append("--f    ").append(n.name).append("    ").append(n.fileSize).append('\n');
         }
-        System.out.println("List the folder " + FSUtils.getAbsolutePath(node));
-        System.out.println(sb.toString());
+        System.out.println("List the folder " + FSUtils.getAbsolutePath(node));   // print folder path
+        System.out.println(sb.toString());                                        // print folder contents
     }
 
 }

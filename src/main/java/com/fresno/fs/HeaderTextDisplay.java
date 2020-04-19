@@ -2,7 +2,7 @@ package com.fresno.fs;
 
 public class HeaderTextDisplay implements TreeDisplay {
 
-    protected TreeDisplay treeDisplay;
+    private TreeDisplay treeDisplay;
 
     public HeaderTextDisplay(TreeDisplay treeDisplay) {
         this.treeDisplay = treeDisplay;

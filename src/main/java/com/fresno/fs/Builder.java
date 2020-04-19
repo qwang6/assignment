@@ -1,9 +1,9 @@
 package com.fresno.fs;
-
+// builder pattern
 public interface Builder {
     public Node getRoot();
 
-    public void makeDirAction(String cmd) throws Exception;
+    public void makeDirAction(String cmd) throws Exception; //condition check, throw exception if false.
 
     public void cdAction(String cmd) throws Exception;
 
@@ -15,5 +15,5 @@ public interface Builder {
 
     public void sizeAction(String cmd) throws Exception;
 
-    public void exit();
+    public void exit() throws Exception;
 }

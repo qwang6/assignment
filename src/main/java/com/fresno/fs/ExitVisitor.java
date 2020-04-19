@@ -3,22 +3,8 @@ package com.fresno.fs;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DeleteProxy {
-
-    private static DeleteProxy deleteProxy;
-
-    private DeleteProxy() {
-
-    }
-    // singleton pattern
-    public static DeleteProxy getInstance() {
-        if (deleteProxy == null) {
-            deleteProxy = new DeleteProxy();
-        }
-        return deleteProxy;
-    }
-
-    public void delete(Node root) {
+public class ExitVisitor implements Visitor {
+    private void delete(Node root) {
         deleteHelper(root);
     }
 
@@ -38,5 +24,10 @@ public class DeleteProxy {
             parent.children.remove(name);
             node.parent = null;
         }
+    }
+
+    @Override
+    public void visit(Node node) throws Exception {
+        delete(node);
     }
 }
