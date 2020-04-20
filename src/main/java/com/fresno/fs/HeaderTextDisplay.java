@@ -9,8 +9,7 @@ public class HeaderTextDisplay implements TreeDisplay {
     }
 
     public void display(Node node) {
-        System.out.println("The File System Header ************************");
-        System.out.println("***********************************************");
+        System.out.println("\nThe File System Header ************************");
         treeDisplay.display(node);
     }
 }

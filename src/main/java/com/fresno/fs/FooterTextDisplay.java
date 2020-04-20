@@ -8,7 +8,6 @@ public class FooterTextDisplay implements TreeDisplay {
 
     public void display(Node node) {
         treeDisplay.display(node);
-        System.out.println("The File System Footer ********************");
-        System.out.println("*******************************************");
+        System.out.println("The File System Footer ********************\n");
     }
 }

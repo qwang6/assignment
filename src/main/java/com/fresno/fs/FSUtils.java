@@ -16,4 +16,8 @@ public class FSUtils {
         // there will be two "/" at the beginning of path, remove the first "/"
         return res.substring(1, res.length()-1);
     }
+
+    public static String getCmdPrefix(Node curNode, String cmd) {
+        return getAbsolutePath(curNode) + " % " + cmd;
+    }
 }

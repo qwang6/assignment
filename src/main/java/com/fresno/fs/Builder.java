@@ -11,7 +11,7 @@ public interface Builder {
 
     public void delAction(String cmd) throws Exception;
 
-    public void lsAction() throws Exception;
+    public void lsAction(String cmd) throws Exception;
 
     public void sizeAction(String cmd) throws Exception;
 

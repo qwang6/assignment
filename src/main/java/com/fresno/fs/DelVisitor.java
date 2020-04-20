@@ -27,7 +27,6 @@ public class DelVisitor implements Visitor {    // label nodes as "to be deleted
         } else {
             node.toBeDeleted = true;           // label file as "to be deleted"
         }
-        System.out.println("Tag the deletion on node " + FSUtils.getAbsolutePath(node));
     }
 
     private void delRecursive(Node node) {     // delete folder recursively

@@ -7,7 +7,7 @@ public class FileSystemBuilder implements Builder {
     private Visitor delVisitor;
     private Visitor lsVisitor;
     private Visitor sizeVisitor;
-    private Visitor deleteProxy;
+    private Visitor exitProxy;
     private ReVisitor reSizeVisitor;
 
     public FileSystemBuilder(TreeDisplay treeDisplay) {
@@ -18,7 +18,7 @@ public class FileSystemBuilder implements Builder {
         this.delVisitor = DelVisitor.getInstance();  //use singleton pattern to instantiate an object.
         this.lsVisitor = LsVisitor.getInstance();
         this.sizeVisitor = SizeVisitor.getInstance();
-        this.deleteProxy = new ExitProxy(new ExitVisitor());
+        this.exitProxy = new ExitProxy(new ExitVisitor());
         this.reSizeVisitor = new ResizeVisitor(treeDisplay);
     }
 
@@ -29,6 +29,8 @@ public class FileSystemBuilder implements Builder {
 
     @Override
     public void makeDirAction(String cmd)  throws Exception{
+        System.out.println(FSUtils.getCmdPrefix(curNode, cmd));
+
         String[] strs = cmd.split(" ");  // split command to word
         // 1. check command
         if (strs.length != 2) {                // mkdir <dirname> command needs two words
@@ -45,12 +47,12 @@ public class FileSystemBuilder implements Builder {
         curNode.children.put(dirName, newNode);    // store the new directory info to children HashMap
         newNode.parent = curNode;                  // set parent node
         newNode.depth = newNode.parent.depth + 1;  // get depth from parent node
-        // 4. call static function to print path
-        System.out.println("Make dir of " + FSUtils.getAbsolutePath(newNode));
     }
 
     @Override
     public void cdAction(String cmd) throws Exception {
+        System.out.println(FSUtils.getCmdPrefix(curNode, cmd));
+
         String[] strs = cmd.split(" ");
         // 1. check command
         if (strs.length != 2) {
@@ -61,7 +63,6 @@ public class FileSystemBuilder implements Builder {
         // 2. enter to parent directory and print current path
         if (dirName.equals("..")) {
             curNode = curNode.parent;
-            System.out.println("Entered the parent directory " + FSUtils.getAbsolutePath(curNode));
             return;
         }
 
@@ -76,11 +77,12 @@ public class FileSystemBuilder implements Builder {
         }
         // 3.3 print path
         curNode = curNode.children.get(dirName); // get Node from children HashMap
-        System.out.println("Entered the directory " + FSUtils.getAbsolutePath(curNode));
     }
 
     @Override
     public void createAction(String cmd) throws Exception {
+        System.out.println(FSUtils.getCmdPrefix(curNode, cmd));
+
         String[] strs = cmd.split(" ");
         // 1. check command
         if (strs.length != 3) {        //create <filename> <size> command needs three words
@@ -99,33 +101,15 @@ public class FileSystemBuilder implements Builder {
         newNode.parent = curNode;                  // set parent
         newNode.depth = newNode.parent.depth + 1;  // get depth from parent
         curNode.children.put(fileName, newNode);   // store info to children HashMap
-        System.out.println("Created the file of " + FSUtils.getAbsolutePath(newNode) + " and the size is " + newNode.fileSize);
     }
 
-    @Override
-    public void delAction(String cmd) throws Exception {
-        String[] strs = cmd.split(" ");
-        // 1. check command
-        if (strs.length != 2) {
-            throw new Exception("del command need one parameter!");
-        }
-        // 2. check if the name existed
-        String name = strs[1];
-        if (!curNode.children.containsKey(name)) {
-            throw new Exception("The target " + name + " is not existed!");
-        }
-        // 3. apply visitor pattern, pass delVisitor object to implement delete
-        curNode.children.get(name).accept(delVisitor);  // map name to node and call accept->del visit
-    }
-
-    @Override
-    public void lsAction() throws Exception {
-        //apply visitor pattern, pass lsVisitor object to implement ls
-        curNode.accept(lsVisitor);  //current node call accept->ls visit
-    }
-
-    @Override
-    public void sizeAction(String cmd) throws Exception {
+    /**
+     * Common Function to accept cmd line, and to execute the action in visitor pattern
+     * @param cmd       cmd line
+     * @param visitor   visitor object
+     * @throws Exception
+     */
+    private void action(String cmd, Visitor visitor)  throws Exception {
         String[] strs = cmd.split(" ");
         // 1. check command
         if (strs.length != 2) {
@@ -136,12 +120,38 @@ public class FileSystemBuilder implements Builder {
         if (!curNode.children.containsKey(name)) {
             throw new Exception("The file " + name + " doesn't exist!");
         }
-        // 3. apply visitor pattern, pass sizeVisitor object to get size
-        curNode.children.get(name).accept(sizeVisitor); // map name to node and call accept->size visit
+        //apply visitor pattern, pass lsVisitor object to implement ls
+        curNode.children.get(name).accept(visitor);  //current node call accept->ls visit
+    }
+
+    @Override
+    public void lsAction(String cmd) throws Exception {
+        System.out.println(FSUtils.getCmdPrefix(curNode, cmd));
+
+        //current node call accept->ls visit
+        action(cmd, this.lsVisitor);
+    }
+
+    @Override
+    public void sizeAction(String cmd) throws Exception {
+        System.out.println(FSUtils.getCmdPrefix(curNode, cmd));
+
+        // map name to node and call accept->size visit
+        action(cmd, this.sizeVisitor);
+    }
+
+    @Override
+    public void delAction(String cmd) throws Exception {
+        System.out.println(FSUtils.getCmdPrefix(curNode, cmd));
+
+        // map name to node and call accept->del visit
+        action(cmd, this.delVisitor);
     }
 
     @Override
     public void reSizeAction(String cmd) throws Exception{
+        System.out.println(FSUtils.getCmdPrefix(curNode, cmd));
+
         String[] strs = cmd.split(" ");
         // 1. check command
         if (strs.length != 3) {
@@ -157,14 +167,16 @@ public class FileSystemBuilder implements Builder {
             throw new Exception( name + " cannot be resized!");
         }
 
-        // 4. apply visitor pattern, pass reSizeVisitor object to resize
-        curNode.children.get(name).accept(reSizeVisitor, Integer.parseInt(strs[2])); // map name to node and call accept->size visit
+        // 4. apply visitor pattern, since the new size need be passed to visitor, I design a Revisitor interface for resize visitor.
+        curNode.children.get(name).accept(reSizeVisitor, Integer.parseInt(strs[2])); // map name to node and call accept->resize visit
     }
 
     @Override
     public void exit() throws Exception {
+        System.out.println(FSUtils.getCmdPrefix(curNode, "exit"));
+
         // apply proxy pattern and print the result
-        deleteProxy.visit(root);
+        exitProxy.visit(root);
         System.out.println("Did the final clean deletion.\n");
     }
 }

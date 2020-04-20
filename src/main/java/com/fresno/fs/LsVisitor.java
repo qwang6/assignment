@@ -22,6 +22,11 @@ public class LsVisitor implements Visitor {
 
     //ls visit, print folder and file.
     public void visit(Node node) {
+        if (node.isFile) {
+            System.out.println(node.name + "    " + node.fileSize);
+            return;
+        }
+
         List<Node> folderList = new ArrayList<>();
         List<Node> fileList = new ArrayList<>();
 
@@ -43,8 +48,7 @@ public class LsVisitor implements Visitor {
         for (Node n : fileList) {
             sb.append("--f    ").append(n.name).append("    ").append(n.fileSize).append('\n');
         }
-        System.out.println("List the folder " + FSUtils.getAbsolutePath(node));   // print folder path
-        System.out.println(sb.toString());                                        // print folder contents
+        System.out.println(sb.toString());  // print folder contents
     }
 
 }

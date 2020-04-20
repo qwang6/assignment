@@ -1,25 +1,24 @@
 package com.fresno.fs;
 
 public class ResizeVisitor implements ReVisitor {
-    // observer pattern
-    private TreeDisplay observer;
 
+    private TreeDisplay observer;   // used for observer pattern
+    // dependency injection, ResizeVisitor class needs a TreeDisplay object to execute notify and update.
     public ResizeVisitor(TreeDisplay treeDisplay) {
         this.observer = treeDisplay;
     }
 
-    // resize visit, set new size to a file.
+    // resize visitor, set new size to a file.
     public void visit(Node node, int newSize) {
         node.fileSize = newSize;
-        System.out.println("Resize the file " + FSUtils.getAbsolutePath(node) + ", new size is " + newSize);
         notifyDisplayTree(node);
     }
 
+    // notify TreeDisplay observer and update display
     private void notifyDisplayTree(Node node) {
-        System.out.println("The file " + node.name + " is resized");
-        System.out.println("Re-display the file system");
+        System.out.println("Resize the file " + node.name + " ,re-display the file system");
         Node root = getRoot(node);
-        observer.display(root);
+        observer.display(root);       //observer call display to update the file system.
     }
 
     private Node getRoot(Node node) {

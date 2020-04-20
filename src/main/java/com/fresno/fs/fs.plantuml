@@ -196,7 +196,7 @@ title __FS's Class Diagram__\n
   com.fresno.fs.FileSystemBuilder .up.|> com.fresno.fs.Builder
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Node : curNode
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : delVisitor
-  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : deleteProxy
+  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : exitProxy
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : lsVisitor
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.ReVisitor : reSizeVisitor
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Node : root

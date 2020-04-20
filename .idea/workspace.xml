@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c3dda79-2604-43a4-bddb-f68f3e2bb17e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/ReVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/ResizeVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/assignment.plantuml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/Builder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/Builder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/DelVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/DelVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FSUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FSUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FileSystemBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FileSystemBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FileSystemClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FileSystemClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FooterTextDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/FooterTextDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/HeaderTextDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/HeaderTextDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/LsVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/LsVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/ResizeVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/ResizeVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fresno/fs/fs.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fresno/fs/fs.plantuml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/script2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fresno/fs/Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/FSUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fresno/fs/FSUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/FileSystemBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fresno/fs/FileSystemBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/FileSystemClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fresno/fs/FileSystemClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fresno/fs/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/script2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/FooterTextDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fresno/fs/FooterTextDisplay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fresno/fs/HeaderTextDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fresno/fs/HeaderTextDisplay.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +129,7 @@
       <workItem from="1586735697374" duration="227000" />
       <workItem from="1586735946018" duration="830000" />
       <workItem from="1586736857084" duration="5271000" />
-      <workItem from="1587224746585" duration="35827000" />
+      <workItem from="1587224746585" duration="41582000" />
     </task>
     <servers />
   </component>
@@ -162,33 +164,33 @@
       <screen x="-1875" y="23" width="1875" height="1057" />
     </state>
     <state x="-1200" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586711168521" />
-    <state width="2458" height="408" key="GridCell.Tab.0.bottom" timestamp="1587342960808">
+    <state width="2458" height="552" key="GridCell.Tab.0.bottom" timestamp="1587356904012">
       <screen x="62" y="23" width="2498" height="1417" />
     </state>
     <state width="1833" height="906" key="GridCell.Tab.0.bottom/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586735250534" />
     <state width="2448" height="408" key="GridCell.Tab.0.bottom/60.23.2500.1417@60.23.2500.1417" timestamp="1587331609382" />
-    <state width="2458" height="408" key="GridCell.Tab.0.bottom/62.23.2498.1417@62.23.2498.1417" timestamp="1587342960808" />
+    <state width="2458" height="552" key="GridCell.Tab.0.bottom/62.23.2498.1417@62.23.2498.1417" timestamp="1587356904012" />
     <state width="2448" height="408" key="GridCell.Tab.0.bottom/70.23.2490.1417@70.23.2490.1417" timestamp="1586738105744" />
-    <state width="2458" height="408" key="GridCell.Tab.0.center" timestamp="1587342960807">
+    <state width="2458" height="552" key="GridCell.Tab.0.center" timestamp="1587356904012">
       <screen x="62" y="23" width="2498" height="1417" />
     </state>
     <state width="1833" height="906" key="GridCell.Tab.0.center/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586735250534" />
     <state width="2448" height="408" key="GridCell.Tab.0.center/60.23.2500.1417@60.23.2500.1417" timestamp="1587331609381" />
-    <state width="2458" height="408" key="GridCell.Tab.0.center/62.23.2498.1417@62.23.2498.1417" timestamp="1587342960807" />
+    <state width="2458" height="552" key="GridCell.Tab.0.center/62.23.2498.1417@62.23.2498.1417" timestamp="1587356904012" />
     <state width="2448" height="408" key="GridCell.Tab.0.center/70.23.2490.1417@70.23.2490.1417" timestamp="1586738105744" />
-    <state width="2458" height="408" key="GridCell.Tab.0.left" timestamp="1587342960807">
+    <state width="2458" height="552" key="GridCell.Tab.0.left" timestamp="1587356904011">
       <screen x="62" y="23" width="2498" height="1417" />
     </state>
     <state width="1833" height="906" key="GridCell.Tab.0.left/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586735250533" />
     <state width="2448" height="408" key="GridCell.Tab.0.left/60.23.2500.1417@60.23.2500.1417" timestamp="1587331609380" />
-    <state width="2458" height="408" key="GridCell.Tab.0.left/62.23.2498.1417@62.23.2498.1417" timestamp="1587342960807" />
+    <state width="2458" height="552" key="GridCell.Tab.0.left/62.23.2498.1417@62.23.2498.1417" timestamp="1587356904011" />
     <state width="2448" height="408" key="GridCell.Tab.0.left/70.23.2490.1417@70.23.2490.1417" timestamp="1586738105743" />
-    <state width="2458" height="408" key="GridCell.Tab.0.right" timestamp="1587342960808">
+    <state width="2458" height="552" key="GridCell.Tab.0.right" timestamp="1587356904012">
       <screen x="62" y="23" width="2498" height="1417" />
     </state>
     <state width="1833" height="906" key="GridCell.Tab.0.right/-1875.23.1875.1057/0.23.1680.1027@-1875.23.1875.1057" timestamp="1586735250534" />
     <state width="2448" height="408" key="GridCell.Tab.0.right/60.23.2500.1417@60.23.2500.1417" timestamp="1587331609381" />
-    <state width="2458" height="408" key="GridCell.Tab.0.right/62.23.2498.1417@62.23.2498.1417" timestamp="1587342960808" />
+    <state width="2458" height="552" key="GridCell.Tab.0.right/62.23.2498.1417@62.23.2498.1417" timestamp="1587356904012" />
     <state width="2448" height="408" key="GridCell.Tab.0.right/70.23.2490.1417@70.23.2490.1417" timestamp="1586738105744" />
     <state width="1833" height="487" key="GridCell.Tab.1.bottom" timestamp="1586729554955">
       <screen x="-1875" y="23" width="1875" height="1057" />

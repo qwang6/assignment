@@ -10,14 +10,15 @@ public class FileSystemClient {
         InputStreamReader streamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(streamReader);
 
-        // Decorator Pattern for TreeDisplay
+        // Decorator & adaptor Pattern for TreeDisplay, chaining instantiation
         TreeDisplay treeDisplay = new FooterTextDisplay(new HeaderTextDisplay(new TreeDisplayAdapter(FileSystemDisplay.getInstance())));
 
-        // Builder Pattern, using Dependency Injection to inject the treeDisplay object to Builder
+        // Builder Pattern, using Dependency Injection to pass treeDisplay object to Builder
         Builder builder = new FileSystemBuilder(treeDisplay);
         for (String line; (line = reader.readLine()) != null; ) {
             String[] strs = line.split(" ");
             String cmd = strs[0].toLowerCase();
+
             switch (cmd) {
                 case "mkdir":
                     builder.makeDirAction(line);
@@ -32,7 +33,7 @@ public class FileSystemClient {
                     builder.delAction(line);
                     break;
                 case "ls":
-                    builder.lsAction();
+                    builder.lsAction(line);
                     break;
                 case "size":
                     builder.sizeAction(line);
@@ -47,7 +48,7 @@ public class FileSystemClient {
                     System.out.println("no match");
             }
         }
-        // adapter pattern, chaining instantiation
+
         treeDisplay.display(builder.getRoot());  // execute FileSystemDisplay()
     }
 }
