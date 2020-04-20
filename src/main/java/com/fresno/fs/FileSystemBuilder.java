@@ -1,4 +1,5 @@
 package com.fresno.fs;
+
 // concrete builder
 public class FileSystemBuilder implements Builder {
     private Node root;
@@ -7,9 +8,9 @@ public class FileSystemBuilder implements Builder {
     private Visitor lsVisitor;
     private Visitor sizeVisitor;
     private Visitor deleteProxy;
-    private static Builder builder;
-    //private constructor for singleton pattern
-    private FileSystemBuilder() {
+    private ReVisitor reSizeVisitor;
+
+    public FileSystemBuilder(TreeDisplay treeDisplay) {
         this.root = new Node();
         root.name = FSConstant.ROOT_NAME; // define a changeable name for root. here root is "/".
         root.depth = 0;
@@ -18,14 +19,7 @@ public class FileSystemBuilder implements Builder {
         this.lsVisitor = LsVisitor.getInstance();
         this.sizeVisitor = SizeVisitor.getInstance();
         this.deleteProxy = new ExitProxy(new ExitVisitor());
-    }
-
-    // static builder method for singleton pattern
-    public static Builder getInstance() {
-        if (builder == null) {
-            builder = new FileSystemBuilder();
-        }
-        return builder;
+        this.reSizeVisitor = new ResizeVisitor(treeDisplay);
     }
 
     @Override
@@ -144,6 +138,27 @@ public class FileSystemBuilder implements Builder {
         }
         // 3. apply visitor pattern, pass sizeVisitor object to get size
         curNode.children.get(name).accept(sizeVisitor); // map name to node and call accept->size visit
+    }
+
+    @Override
+    public void reSizeAction(String cmd) throws Exception{
+        String[] strs = cmd.split(" ");
+        // 1. check command
+        if (strs.length != 3) {
+            throw new Exception("size command need two parameters!");
+        }
+        // 2. check if the name existed
+        String name = strs[1];
+        if (!curNode.children.containsKey(name)) {
+            throw new Exception("The file " + name + " doesn't exist!");
+        }
+        // 3. check if the node is a folder
+        if (!curNode.children.get(name).isFile) {
+            throw new Exception( name + " cannot be resized!");
+        }
+
+        // 4. apply visitor pattern, pass reSizeVisitor object to resize
+        curNode.children.get(name).accept(reSizeVisitor, Integer.parseInt(strs[2])); // map name to node and call accept->size visit
     }
 
     @Override

@@ -15,5 +15,7 @@ public interface Builder {
 
     public void sizeAction(String cmd) throws Exception;
 
+    public void reSizeAction(String cmd) throws Exception;
+
     public void exit() throws Exception;
 }

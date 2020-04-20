@@ -81,6 +81,18 @@ title __ASSIGNMENT's Class Diagram__\n
   
 
   namespace com.fresno.fs {
+    interface com.fresno.fs.ReVisitor {
+    }
+  }
+  
+
+  namespace com.fresno.fs {
+    class com.fresno.fs.ResizeVisitor {
+    }
+  }
+  
+
+  namespace com.fresno.fs {
     class com.fresno.fs.SizeVisitor {
     }
   }
@@ -113,6 +125,7 @@ title __ASSIGNMENT's Class Diagram__\n
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : delVisitor
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : deleteProxy
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : lsVisitor
+  com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.ReVisitor : reSizeVisitor
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Node : root
   com.fresno.fs.FileSystemBuilder o-- com.fresno.fs.Visitor : sizeVisitor
   com.fresno.fs.FooterTextDisplay .up.|> com.fresno.fs.TreeDisplay
@@ -121,6 +134,8 @@ title __ASSIGNMENT's Class Diagram__\n
   com.fresno.fs.HeaderTextDisplay o-- com.fresno.fs.TreeDisplay : treeDisplay
   com.fresno.fs.LsVisitor .up.|> com.fresno.fs.Visitor
   com.fresno.fs.Node o-- com.fresno.fs.Node : parent
+  com.fresno.fs.ResizeVisitor .up.|> com.fresno.fs.ReVisitor
+  com.fresno.fs.ResizeVisitor o-- com.fresno.fs.TreeDisplay : observer
   com.fresno.fs.SizeVisitor .up.|> com.fresno.fs.Visitor
   com.fresno.fs.TreeDisplayAdapter .up.|> com.fresno.fs.TreeDisplay
   com.fresno.fs.TreeDisplayAdapter o-- com.fresno.fs.FileSystemDisplay : fsDisplay

@@ -30,4 +30,8 @@ public class Node {
     public void accept(Visitor visitor) throws Exception {
         visitor.visit(this);
     }
+
+    public void accept(ReVisitor revisitor, int newSize) throws Exception {
+        revisitor.visit(this, newSize);
+    }
 }

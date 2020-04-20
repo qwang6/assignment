@@ -6,11 +6,15 @@ import java.io.InputStreamReader;
 
 public class FileSystemClient {
     public static void main(String[] args) throws Exception {
-        InputStream inputStream = FileSystemClient.class.getResourceAsStream("/script1.txt");
+        InputStream inputStream = FileSystemClient.class.getResourceAsStream("/script2.txt");
         InputStreamReader streamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(streamReader);
 
-        Builder builder = FileSystemBuilder.getInstance();
+        // Decorator Pattern for TreeDisplay
+        TreeDisplay treeDisplay = new FooterTextDisplay(new HeaderTextDisplay(new TreeDisplayAdapter(FileSystemDisplay.getInstance())));
+
+        // Builder Pattern, using Dependency Injection to inject the treeDisplay object to Builder
+        Builder builder = new FileSystemBuilder(treeDisplay);
         for (String line; (line = reader.readLine()) != null; ) {
             String[] strs = line.split(" ");
             String cmd = strs[0].toLowerCase();
@@ -33,6 +37,9 @@ public class FileSystemClient {
                 case "size":
                     builder.sizeAction(line);
                     break;
+                case "resize":
+                    builder.reSizeAction(line);
+                    break;
                 case "exit":
                     builder.exit();
                     break;
@@ -41,7 +48,6 @@ public class FileSystemClient {
             }
         }
         // adapter pattern, chaining instantiation
-        TreeDisplay treeDisplay = new FooterTextDisplay(new HeaderTextDisplay(new TreeDisplayAdapter(FileSystemDisplay.getInstance())));
         treeDisplay.display(builder.getRoot());  // execute FileSystemDisplay()
     }
 }

@@ -18,8 +18,6 @@ create project2.txt 40
 create quiz1.txt 30
 size quiz1.txt
 resize project2.txt 60
-scripti txt
-script2 txt
 cd ..
 size CSci41
 size CSci250
